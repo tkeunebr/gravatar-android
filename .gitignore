@@ -1,6 +1,33 @@
+# Java class files
 *.class
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.classpath
+.project
+
+# IntelliJ files and folders
+.idea/
+.settings/
+*.iml
+
+# Windows file system files
+*.db
