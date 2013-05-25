@@ -38,6 +38,9 @@ public class Gravatar {
 		return singleton;
 	}
 
+	/**
+	 * Start a Gravatar URL building request using the specified email address.
+	 */
 	public RequestBuilder with(String email) {
 		return new RequestBuilder(this, email);
 	}
