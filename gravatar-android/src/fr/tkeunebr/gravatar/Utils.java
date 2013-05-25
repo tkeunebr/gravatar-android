@@ -8,7 +8,6 @@ class Utils {
 	private static final StringBuilder sBuilder = new StringBuilder();
 	private static final String SPECIAL_CHARS = " %$&+,/:;=?@<>#%";
 
-	// TODO: use DigestUtils from apache
 	private static String hex(byte[] array) {
 		sBuilder.setLength(0);
 		for (byte b : array) {

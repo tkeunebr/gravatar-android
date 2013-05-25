@@ -6,12 +6,10 @@ public class Gravatar {
 	static Gravatar singleton = null;
 	final boolean ssl;
 	final boolean extension;
-	final int fixedSize;
 
-	private Gravatar(boolean ssl, boolean extension, int fixedSize) {
+	private Gravatar(boolean ssl, boolean extension) {
 		this.ssl = ssl;
 		this.extension = extension;
-		this.fixedSize = fixedSize;
 	}
 
 	public static Gravatar init() {
@@ -28,7 +26,6 @@ public class Gravatar {
 	public static class Builder {
 		private boolean ssl = false;
 		private boolean extension = false;
-		private int fixedSizeInPixel = -1;
 
 		public Builder() {
 		}
@@ -38,18 +35,13 @@ public class Gravatar {
 			return this;
 		}
 
-		public Builder showExtension() {
+		public Builder fileExtension() {
 			this.extension = true;
 			return this;
 		}
 
-		public Builder fixedSize(int fixedSizeInPixel) {
-			this.fixedSizeInPixel = fixedSizeInPixel;
-			return this;
-		}
-
 		public Gravatar build() {
-			return new Gravatar(ssl, extension, fixedSizeInPixel);
+			return new Gravatar(ssl, extension);
 		}
 	}
 

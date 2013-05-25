@@ -16,28 +16,16 @@ public class RequestBuilder {
 			builder.append(".jpg");
 		}
 		builder.append("?");
-		if (gravatar.fixedSize != -1) {
-			setSize(gravatar.fixedSize);
-		}
 		this.gravatar = gravatar;
 	}
 
-	private void setSize(int sizeInPixels) {
+	public RequestBuilder size(int sizeInPixels) {
 		if (sizeInPixels >= Gravatar.MIN_IMAGE_SIZE_PIXEL && sizeInPixels <= Gravatar.MAX_IMAGE_SIZE_PIXEL) {
 			builder.append("&size=").append(sizeInPixels);
-			return;
+			return this;
 		}
 		throw new IllegalArgumentException("Requested image size must be between " + Gravatar.MIN_IMAGE_SIZE_PIXEL
 				+ " and " + Gravatar.MAX_IMAGE_SIZE_PIXEL);
-	}
-
-	public RequestBuilder size(int sizeInPixels) {
-		if (gravatar.fixedSize != -1) {
-			throw new UnsupportedOperationException("Fixed size has been globally set, please use another Gravatar " +
-					"instance to specify per image size");
-		}
-		setSize(sizeInPixels);
-		return this;
 	}
 
 	public RequestBuilder forceDefault() {
