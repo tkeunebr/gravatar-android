@@ -4,9 +4,12 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-class Utils {
+final class Utils {
 	private static final StringBuilder sBuilder = new StringBuilder();
 	private static final String SPECIAL_CHARS = " %$&+,/:;=?@<>#%";
+
+	private Utils() {
+	}
 
 	private static String hex(byte[] array) {
 		sBuilder.setLength(0);

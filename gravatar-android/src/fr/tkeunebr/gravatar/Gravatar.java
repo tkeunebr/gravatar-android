@@ -1,9 +1,15 @@
 package fr.tkeunebr.gravatar;
 
+/**
+ * Easy Gravatar query building.
+ * <p/>
+ * Use {@link #init()} for the global singleton instance or construct your
+ * own instance with {@link Builder}.
+ */
 public class Gravatar {
 	public static final int MIN_IMAGE_SIZE_PIXEL = 1;
 	public static final int MAX_IMAGE_SIZE_PIXEL = 2048;
-	static Gravatar singleton = null;
+	private static Gravatar singleton = null;
 	final boolean ssl;
 	final boolean extension;
 
@@ -12,6 +18,19 @@ public class Gravatar {
 		this.extension = extension;
 	}
 
+	/**
+	 * The global default {@link Gravatar} instance.
+	 * <p/>
+	 * This instance is automatically initialized with defaults that are suitable to most
+	 * implementations.
+	 * <ul>
+	 * <li>SSL turned off by default</li>
+	 * <li>Image extension (.jpg) not displayed.</li>
+	 * </ul>
+	 * <p/>
+	 * If these settings do not meet the requirements of your application you can construct your own
+	 * instance with full control over the configuration by using {@link Gravatar.Builder}.
+	 */
 	public static Gravatar init() {
 		if (singleton == null) {
 			singleton = new Builder().build();
@@ -23,6 +42,10 @@ public class Gravatar {
 		return new RequestBuilder(this, email);
 	}
 
+	/**
+	 * Fluent API for creating {@link Gravatar} instances.
+	 */
+	@SuppressWarnings("UnusedDeclaration") // Public API.
 	public static class Builder {
 		private boolean ssl = false;
 		private boolean extension = false;
@@ -30,16 +53,25 @@ public class Gravatar {
 		public Builder() {
 		}
 
+		/**
+		 * Specify that the secure Gravatar endpoint should be used by default. *
+		 */
 		public Builder ssl() {
 			this.ssl = true;
 			return this;
 		}
 
+		/**
+		 * Specify that file extension (.jpg) will be displayed at the end of the generated URL. *
+		 */
 		public Builder fileExtension() {
 			this.extension = true;
 			return this;
 		}
 
+		/**
+		 * Create the {@link Gravatar} instance.
+		 */
 		public Gravatar build() {
 			return new Gravatar(ssl, extension);
 		}
