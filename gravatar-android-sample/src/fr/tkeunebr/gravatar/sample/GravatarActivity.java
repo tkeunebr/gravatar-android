@@ -14,8 +14,8 @@ public final class GravatarActivity extends ListActivity {
     setContentView(R.layout.gravatar_activity);
 
     List<User> users = new ArrayList<User>(10);
-    for (int i = 0; i < 10; i++) {
-      users.add(new User("User" + i, i % 2 == 0 ? "thomas.keunebroek@gmail.com" : "unknown@fake.com"));
+    for (int i = 1; i <= 10; i++) {
+      users.add(new User("User " + i, i % 2 == 0 ? "thomas.keunebroek@gmail.com" : "unknown@fake.com"));
     }
 
     GravatarAdapter adapter = new GravatarAdapter(this);
