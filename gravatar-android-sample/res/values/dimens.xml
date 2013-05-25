@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Avatar ImageView size. -->
+    <dimen name="avatar_image_view_size">80dp</dimen>
+</resources>
