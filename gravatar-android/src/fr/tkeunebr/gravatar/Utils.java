@@ -24,7 +24,7 @@ final class Utils {
 		try {
 			messageDigest = MessageDigest.getInstance("MD5");
 			messageDigest.reset();
-			return hex(messageDigest.digest(email.getBytes("CP1252")));
+			return hex(messageDigest.digest(email.getBytes("UTF-8")));
 		} catch (NoSuchAlgorithmException e) {
 			return email;
 		} catch (UnsupportedEncodingException e) {
