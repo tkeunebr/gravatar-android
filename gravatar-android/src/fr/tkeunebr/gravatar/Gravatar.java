@@ -57,7 +57,7 @@ public class Gravatar {
     }
 
     /**
-     * Specify that the secure Gravatar endpoint should be used by default. *
+     * Specify that the secure Gravatar endpoint should be used by default.
      */
     public Builder ssl() {
       this.ssl = true;
@@ -65,7 +65,7 @@ public class Gravatar {
     }
 
     /**
-     * Specify that file extension (.jpg) will be displayed at the end of the generated URL. *
+     * Specify that file extension (.jpg) will be displayed at the end of the generated URL.
      */
     public Builder fileExtension() {
       this.extension = true;
