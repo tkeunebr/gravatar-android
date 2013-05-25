@@ -28,6 +28,27 @@ local.properties
 .idea/
 .settings/
 *.iml
+*.iws
+*.ipr
+classes
+gen-external-apklibs
 
 # Windows file system files
 *.db
+
+# Mac file system files
+.DS_Store
+
+# Ant
+bin
+gen
+build
+out
+lib
+build.xml
+proguard-project.txt
+
+# Maven
+target
+pom.xml.*
+release.properties
