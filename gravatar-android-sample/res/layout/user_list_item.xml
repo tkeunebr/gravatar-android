@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="32dp">
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/user_avatar"

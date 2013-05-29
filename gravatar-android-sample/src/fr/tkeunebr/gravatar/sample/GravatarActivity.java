@@ -15,7 +15,13 @@ public final class GravatarActivity extends ListActivity {
 
     List<User> users = new ArrayList<User>(10);
     for (int i = 1; i <= 10; i++) {
-      users.add(new User("User " + i, i % 2 == 0 ? "thomas.keunebroek@gmail.com" : "unknown@fake.com"));
+      final User user;
+      if (i % 2 == 0) {
+        user = new User("User " + (int) i / 2, "thomas.keunebroek@gmail.com");
+      } else {
+        user = new User("Unknown user", "unknown@fake.com");
+      }
+      users.add(user);
     }
 
     GravatarAdapter adapter = new GravatarAdapter(this);
