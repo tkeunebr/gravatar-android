@@ -3,7 +3,7 @@ gravatar-android
 
 A lightweight Java Gravatar library optimized for Android.
 
-![Gravatar-android sample screenshot](http://thomaskeunebroek.fr/gravatar_sample_screenshot.png "Gravatar-android sample screenshot")
+![Gravatar-android sample screenshot](static/gravatar_sample_screenshot.png "Gravatar-android sample screenshot")
 
 
 Usage
@@ -24,8 +24,8 @@ your users' faces in one line of code (usually in BaseAdapter.getView()).
             
 You can have a look at the sample app for a more complete implementation.
 
-If you need to, you can provide the library with other default params by creating your own instance of 
-the Gravatar object using the build-in Gravatar.Builder class. In this case, the recommanded approach
+If you need to, you can provide the library with other default params by creating your own instance of Gravatar
+using the build-in Gravatar.Builder class. In this case, the recommanded approach
 is to store the resulting Gravatar object as a singleton in your application.
 
     Gravatar myGravatar = new Gravatar.Builder().ssl().build();
@@ -35,7 +35,7 @@ Download
 ================
 
 You can download the 
-[latest JAR](https://github.com/tkeunebr/gravatar-android/blob/master/gravatar-android-sample/libs/gravatar-android.jar) 
+[latest JAR](https://github.com/tkeunebr/gravatar-android/blob/master/gravatar-android-sample/libs/gravatar-android-1.0.jar) 
 used in the sample app and add it as a dependency to your project. I'll be happy to consider and review each of your
 pull requests.
 
